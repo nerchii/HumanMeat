@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "human_meat",
+  "version": "${version}",
+  "name": "Human Meat",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/human_meat/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "mod.human_meat.client.Human_meatClient"
+    ],
+    "main": [
+      "mod.human_meat.Human_meat"
+    ]
+  },
+  "mixins": [
+    "human_meat.mixins.json",
+    {
+      "config": "human_meat.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
