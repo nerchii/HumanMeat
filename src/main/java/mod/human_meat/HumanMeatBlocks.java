@@ -1,21 +1,31 @@
 package mod.human_meat;
 
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
-public class ModBlocks {
-    private static final String MOD_ID = "human_meat"; // Your mod ID
+public class HumanMeatBlocks {
+    public static final Block SKIN_MASK = register(new Block(AbstractBlock.Settings.create()),
+            "skin_mask", true);
+
+    public static void initialize(){
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INVENTORY).register((itemGroup) -> {
+            itemGroup.add(SKIN_MASK.asItem());
+        });
+    }
 
     public static Block register(Block block, String name, boolean shouldRegisterItem) {
-        // Create an Identifier for the block
-        Object FabricDocsReference;
-        Identifier id = Identifier.of(FabricDocsReference.MOD_ID, name);
+        // Register the block and its item.
+        Identifier id = Identifier.of(HumanMeat.MOD_ID, name);
 
-
+        // Sometimes, you may not want to register an item for the block.
+        // Eg: if it's a technical block like `minecraft:air` or `minecraft:end_gateway`
         if (shouldRegisterItem) {
             BlockItem blockItem = new BlockItem(block, new Item.Settings());
             Registry.register(Registries.ITEM, id, blockItem);
@@ -23,11 +33,4 @@ public class ModBlocks {
 
         return Registry.register(Registries.BLOCK, id, block);
     }
-
 }
-
-
-public static final Item human_skin = register(
-        new Item(new Item.Settings()),
-        "human_skin"
-);

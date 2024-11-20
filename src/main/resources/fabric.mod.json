@@ -14,7 +14,7 @@
       "mod.human_meat.client.Human_meatClient"
     ],
     "main": [
-      "mod.human_meat.Human_meat"
+      "mod.human_meat.HumanMeat"
     ]
   },
   "mixins": [
