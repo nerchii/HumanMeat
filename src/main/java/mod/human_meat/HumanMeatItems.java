@@ -7,6 +7,7 @@ import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import net.minecraft.village.VillagerProfession;
 
 public class HumanMeatItems {
     public static void initialize() {
@@ -28,7 +29,6 @@ public class HumanMeatItems {
     public static Item register(Item item, String id) {
         // Create the identifier for the item.
         Identifier itemID = Identifier.of(HumanMeat.MOD_ID, id);
-
         // Register the item.
         Item registeredItem = Registry.register(Registries.ITEM, itemID, item);
 

@@ -1,4 +1,6 @@
 {
   "item.human_meat.suspicious_substance": "Suspicious Substance",
-  "item.human_meat.human_eye": "Human Eye"
+  "item.human_meat.human_eye": "Human Eye",
+
+  "entity.minecraft.villager.skinner": "Skinner"
 }
