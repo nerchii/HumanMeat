@@ -40,8 +40,7 @@
 
 ## Compatibility
 - **Minecraft Version**: Works with version 1.20.4
-- **Forge Version**: Compatible with Forge version
-- 
+- Made with Fabric  
 
 ---
 
